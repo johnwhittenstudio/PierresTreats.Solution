@@ -14,7 +14,7 @@ namespace PierresTreats.Controllers
   {
     private readonly PierresTreatsContext _db;
 
-    public FlavorsController(ToDoListContext db)
+    public FlavorsController(PierresTreatsContext db)
     {
       _db = db;
     }
