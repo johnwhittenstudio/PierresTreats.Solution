@@ -37,12 +37,6 @@ namespace PierresTreats.Controllers
     }
 
 
-    // public ActionResult Create()
-    // {
-    //   ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Type");
-    //   return View();
-    // }
-
     [HttpPost]
     public async Task<ActionResult> Create(Treat treat, int FlavorId)
     {
@@ -59,7 +53,7 @@ namespace PierresTreats.Controllers
         return RedirectToAction("Index");
     }
 
-    [AllowAnonymous]
+    // [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisTreat = _db.Treats
