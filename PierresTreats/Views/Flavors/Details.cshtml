@@ -13,35 +13,47 @@
       &nbsp;
       &nbsp;
       <div id="card" class="card border-dark mb-3" style="position: center; width: 100%; height: 50%">
-        <div class="card-header">
-        <center><strong><h1 id="title" style="font-size:6vw">Flavor Details</h1></strong></center>
+        <div class="outer-border">
+          <div class="mid-border">
+            <div class="inner-border">
+                <img class="corner-decoration corner-left-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="corner-decoration corner-right-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="corner-decoration corner-right-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="corner-decoration corner-left-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+                <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+                <img class="vertical-decoration bottom" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+              <div class="card-header">
+              <center><strong><h1 id="title" style="font-size:6vw">Les Saveurs</h1></strong></center>
+              </div>
+              &nbsp;
+                @* <center><h4>@Html.DisplayNameFor(model => model.Type):</h4><h2> @Html.DisplayFor(model => model.Type)</h2></center> *@
+              &nbsp;
+                @if(@Model.JoinEntities.Count == 0)
+                {
+                  <center><h3>Pardonnez-nous, we are currently out of @Html.DisplayFor(model => model.Type) treats</h3></center>
+                }
+                else
+                {
+                  <center><h4>Our current selection of @Html.DisplayFor(model => model.Type) treats:</h4></center>
+
+                  @foreach(var join in Model.JoinEntities)
+                  {
+                    <center><h2>@join.Treat.Name</h2></center>
+                  }
+
+                }
+            &nbsp;
+            &nbsp;
+            <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</button>
+                    <button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</button></center>
+            &nbsp;
+            &nbsp;
+            <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Back to Flavors", "Index")</button></center>
+            &nbsp;
+            &nbsp;
+          </div>
         </div>
-        &nbsp;
-          <center><h4>@Html.DisplayNameFor(model => model.Type):</h4><h2> @Html.DisplayFor(model => model.Type)</h2></center>
-        &nbsp;
-          @if(@Model.JoinEntities.Count == 0)
-          {
-            <center><h3>This flavor does not contain any treats</h3></center>
-          }
-          else
-          {
-            <center><h4>Treats the flavor contains:</h4></center>
-
-            @foreach(var join in Model.JoinEntities)
-            {
-              <center><h2>@join.Treat.Name</h2></center>
-            }
-
-          }
-      &nbsp;
-      &nbsp;
-      <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</button>
-              <button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</button></center>
-      &nbsp;
-      &nbsp;
-      <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Back to Flavors", "Index")</button></center>
-      &nbsp;
-      &nbsp;
+      </div>
     </div>
   </div>
 </div>

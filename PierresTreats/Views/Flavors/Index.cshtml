@@ -13,31 +13,47 @@
       &nbsp;
       &nbsp;
       <div id="card" class="card border-dark mb-3" style="position: center; width: 100%; height: 50%">
-        <div class="card-header">
-        <center><strong><h1 id="title" style="font-size:6vw">Flavors</h1></strong></center>
-        </div>
-        &nbsp;
-        @if (@Model.Count == 0)
-        {
-          <center>
-            <h3>No flavors have been added yet!</h3>
-          </center>
-        }
+      <div class="outer-border">
+        <div class="mid-border">
+          <div class="inner-border">
+              <img class="corner-decoration corner-left-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-right-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-right-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-left-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+              <img class="vertical-decoration bottom" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+            <div class="card-header">
+            <center><strong><h1 id="title" style="font-size:6vw">Les Saveurs</h1></strong></center>
+            </div>
+            &nbsp;
+            @if (@Model.Count == 0)
+            {
+              <center>
+                <h3>No flavors have been added yet!</h3>
+              </center>
+            }
 
-        <center>
-          @foreach (Flavor flavor in Model)
-          {
-            <h3>@Html.ActionLink($"{flavor.Type}", "Details", new { id = flavor.FlavorId })</h3>
-          }
-        </center>
-        &nbsp;
-        &nbsp;
-        <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0"style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Add new flavor", "Create")</button>
-        &nbsp;
-        <button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Home", "Index", "Home")</button>
-        </center>
-        &nbsp;
-        &nbsp;
+            <center>
+              @foreach (Flavor flavor in Model)
+              {
+                <h3>@Html.ActionLink($"{flavor.Type}", "Details", new { id = flavor.FlavorId })</h3>
+              }
+            </center>
+            &nbsp;
+            &nbsp;
+            <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0"style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Add new flavor", "Create")</button>
+            &nbsp;
+            <button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Home", "Index", "Home")</button>
+            </center>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>

@@ -1,0 +1,324 @@
+﻿div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  font-family: 'Emilys Candy', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  color: rgb(231, 170, 139);
+  background-color: rgb(62, 63, 65);
+  padding:8px;
+}
+
+#logo {
+  font-family: 'Emilys Candy', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  color: rgb(231, 170, 139);
+  margin-right: 30%;
+}
+
+#title{
+  font-family: 'Emilys Candy', cursive;
+  padding-top: 9%;
+  color: rgb(231, 170, 139);
+  background-color: rgb(62, 63, 65);
+}
+
+#title2{
+  font-family: 'Emilys Candy', cursive;
+  padding-top: 5%;
+  padding-bottom: 8%;
+  color: rgb(231, 170, 139);
+  background-color: rgb(62, 63, 65);
+}
+
+#card{
+  font-family: 'Emilys Candy', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  color: rgb(231, 170, 139);
+  margin-top: -5%;
+  background-color: rgb(62, 63, 65);
+  /* border:rgb(254, 255, 170);
+  border-radius: 0%; */
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+}
+
+#card-header{
+  font-family: 'Emilys Candy', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  color: rgb(231, 170, 139);
+  margin-top: -5%;
+  background-color: rgb(62, 63, 65);
+  /* border:rgb(254, 255, 170);
+  border-radius: 0%; */
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+}
+
+
+#button{
+  font-family: 'Emilys Candy', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  color: rgb(231, 170, 139);
+  background-color: rgb(62, 63, 65);
+  border-color: rgb(231, 170, 139);
+  outline-color: rgb(231, 170, 139);
+  /* margin-bottom: 50%; */
+}
+
+#table{
+  font-family: 'Emilys Candy', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+  color: rgb(231, 170, 139);
+  background-color: rgb(62, 63, 65);
+  border-color: rgb(231, 170, 139);
+  outline-color: rgb(231, 170, 139);
+}
+
+table {
+  color: rgb(231, 170, 139);
+}
+
+#searchBar {
+  margin-left: 25%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(62, 63, 65);
+}
+
+.nav-link {
+  color: rgb(231, 170, 139);
+}
+
+/* unvisited link */
+a:link {
+  color: rgb(231, 170, 139);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(231, 170, 139);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(250, 137, 126);
+}
+
+/* selected link */
+a:active {
+  color: rgb(248, 80, 65);
+}
+
+hr {
+  margin-right: 10%;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+div#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+
+.inner-border {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.outer-border {
+	border: 2px solid #DE9B72;
+   	height: 99%;
+    width: 98%;
+    padding: 6px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+	.outer-border {
+		height: 94%;
+	}
+}
+
+.mid-border {
+    border: 6px solid #DE9B72;
+    height: 100%;
+    width: 100%;
+    padding: 6px;
+    margin: auto;
+}
+
+.inner-border {
+	position: relative;
+	border: 2px solid #DE9B72;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 9%;
+}
+
+
+/* Decorations */
+.corner-decoration {
+	position: absolute;
+    width: 3em;
+    margin: -3px;
+}
+
+@media (min-width: 768px) {
+	.corner-decoration {
+		width: 3.5em;
+	  	margin: -4px;
+	}
+}
+
+@media (min-width: 992px) {
+	.corner-decoration {
+		width: 4em;
+	  	margin: -5px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.corner-decoration {
+		width: 5em;
+	  	margin: -6px;
+	}
+}
+
+.corner-decoration.corner-left-top {
+	left: 0;
+	top: 0;
+}
+
+.corner-decoration.corner-right-top {
+	top: 0;
+	right: 0;
+	 -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.corner-decoration.corner-right-bottom {
+	right: 0;
+	bottom: 0;
+	 -webkit-transform: scale(-1);
+  	transform: scale(-1);
+}
+
+.corner-decoration.corner-left-bottom {
+	left: 0;
+	bottom: 0;
+	-webkit-transform: scaleY(-1);
+  	transform: scaleY(-1);
+}
+
+
+.vertical-decoration {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 11em;
+}
+
+
+@media (min-width: 768px) {
+	.vertical-decoration {
+		width: 16em;
+	}
+}
+
+
+@media (min-width: 992px) {
+	.vertical-decoration {
+		width: 20em;
+	}
+}
+
+@media (min-width: 1200px) {
+	.vertical-decoration {
+		width: 27em;
+	}
+}
+
+.vertical-decoration.top {
+	top: 0;
+
+}
+
+.vertical-decoration.bottom {
+	bottom: 0;
+	-webkit-transform: scaleY(-1);
+  	transform: scaleY(-1);
+}

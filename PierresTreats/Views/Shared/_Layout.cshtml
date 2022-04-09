@@ -8,29 +8,29 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Orbitron:wght@500;700&family=Permanent+Marker&family=Prompt:ital,wght@0,300;1,500;1,700;1,900&display=swap" rel="stylesheet">  <link rel="stylesheet" href="~/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Grape+Nuts&family=Orbitron:wght@500;700&family=Permanent+Marker&family=Prompt:ital,wght@0,300;1,500;1,700;1,900&display=swap" rel="stylesheet"> <link rel="stylesheet" href="~/css/styles.css">
 </head>
 
 <body>
   <div class="container mt-5">
     <div class="row">
-      <h1 id="logo">To Do List</h1>
+      <h1 id="logo">Pierre's</h1>
       <ul class="nav row">
         <li class="nav-item">
           @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link"})
         </li>
         <li class="nav-item">
-          @Html.ActionLink("Categories", "Index", "Categories", null, new { @class = "nav-link"})
+          @Html.ActionLink("Flavors", "Index", "Flavors", null, new { @class = "nav-link"})
         </li>
         <li class="nav-item">
-          @Html.ActionLink("Items", "Index", "Items", null, new { @class = "nav-link"})
+          @Html.ActionLink("Treats", "Index", "Treats", null, new { @class = "nav-link"})
         </li>
       </ul>
       <form id="searchBar" class="form-inline my-sm-0">
-        <a href='~/Account/Index'><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="width:150px">Login</button></a><br>
+        <a href='~/Account/Index'><button id="button" type="button" class="btn btn-outline-e6ab8c; my-sm-0" style="width:150px">Login</button></a><br>
       </form>
     </div>
-    <hr size="8" width="100%" color="black" class="mr-5">
+    <hr size="8" width="100%" color="white" class="mr-5">
     @RenderBody()
     @await Html.PartialAsync("Footer")
   </div>
@@ -39,8 +39,8 @@
 </html>
 
 
-@* 
-<!DOCTYPE html>
+
+@* <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />

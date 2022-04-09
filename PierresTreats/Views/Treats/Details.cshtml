@@ -13,40 +13,90 @@
       &nbsp;
       &nbsp;
       <div id="card" class="card border-dark mb-3" style="position: center; width: 100%; height: 50%">
-        <div class="card-header">
-        <center><strong><h1 id="title" style="font-size:6vw">Treat Details</h1></strong></center>
-        </div>
-        &nbsp;
-          <center><h4>@Html.DisplayNameFor(model => model.Name):</h4><h2> @Html.DisplayFor(model => model.Name)</h2>
-          <center><h5>@Html.DisplayNameFor(model => model.Amount):</h5><h3> @Html.DisplayFor(model => model.Amount)</h3>
-        &nbsp;
-        @if (@Model.JoinEntities.Count == 0)
-        {
-        <center><h3>This treat does not belong to any flavors</h3></center>
-        }
-        else
-        {
-          <center><h4>Flavors the treat belongs to:</h4></center>
-          @foreach (var join in Model.JoinEntities)
-            {
-              <center><h2>@join.Flavor.Type</h2></center>
-              @using (Html.BeginForm("DeleteFlavor", "Treats"))
+        <div class="outer-border">
+          <div class="mid-border">
+            <div class="inner-border">
+              <img class="corner-decoration corner-left-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-right-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-right-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-left-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+              <img class="vertical-decoration bottom" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+              <div class="card-header">
+              <center><strong><h1 id="title" style="font-size:4vw">@Html.DisplayFor(model => model.Name)'s' Details</h1></strong></center>
+            </div>
+            <table id="table" class="table" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th>
+                        &nbsp;
+                    </th>
+                    <th>
+                        <em>Name</em>
+                    </th>
+                    <th>
+                        <em>Inventory</em>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="table" class="table">
+                    <td width 10%>
+                        &nbsp;
+                    </td>
+                    <td width 50%>
+                        <h4>@Html.DisplayFor(model => model.Name)</h4>
+                    </td>
+                    <td width 50%>
+                    @if(@Model.Amount == 0)
+                        {
+                          <p>Pardonnez-nous, we are currently out of this treat</p>
+                        }
+                        else
+                        {
+                          <h4>@Html.DisplayFor(model => model.Amount)</h4>
+                        }
+                        
+                    </td>
+                    <td width 50%>
+                        @Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId }, new { @class = "btn btn-outline", id="button" })
+                    </td>
+                    <td width 50%>
+                        @Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId }, new { @class = "btn btn-outline", id="button"  })
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+              @if (@Model.JoinEntities.Count == 0)
               {
-                @Html.Hidden("joinId", @join.FlavorTreatId)
-                <input type="submit" value="Delete from Flavor" id="button" class="btn btn-outline-dark my-sm-0" />
+              <center><h3>This treat does not currently contain any flavors</h3></center>
               }
-            }
-        }
-      &nbsp;
-      &nbsp;
-      <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</button>
-              <button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</button>
-              <button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</button></center>
-      &nbsp;
-      &nbsp;
-      <center><button id="button" type="button" class="btn btn-outline-dark my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Back to list", "Index")</button></center>
-      &nbsp;
-      &nbsp;
+              else
+              {
+                <center><h4> Flavors:</h4>
+                @foreach (var join in Model.JoinEntities)
+                  {
+                    <h2>@join.Flavor.Type</h2>
+                    @using (Html.BeginForm("DeleteFlavor", "Treats"))
+                    {
+                      @Html.Hidden("joinId", @join.FlavorTreatId)
+                      <input type="submit" value="Remove Flavor" id="button" class="btn btn-outline my-sm-0" />
+                    }
+                  }</center>
+              }
+            &nbsp;
+            &nbsp;
+            <center><button id="button" type="button" class="btn btn-outline my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</button>
+            &nbsp;
+            &nbsp;
+            <button id="button" type="button" class="btn btn-outline my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Back to Menu", "Index")</button></center>
+            &nbsp;
+            &nbsp;
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

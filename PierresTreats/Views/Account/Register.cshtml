@@ -15,27 +15,42 @@
     &nbsp;
     &nbsp;  
       <div id="card" class="card border-dark mb-3" style="position: center; width: 100%; height: 50%">
-        <div class="card-header">
-          <center><h1>Register a new user</h1></center>
+        <div class="outer-border">
+          <div class="mid-border">
+            <div class="inner-border">
+              <img class="corner-decoration corner-left-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-right-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-right-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-left-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+              <img class="vertical-decoration bottom" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+            <div class="card-header">
+              <center><h1 id="title">Create New User Account</h1></center>
+            </div>
+            <br>
+            &nbsp;
+            &nbsp;
+            <center>@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+            {
+                @Html.LabelFor(user => user.Email)
+                <span> &nbsp; </span>
+                @Html.TextBoxFor(user=> user.Email)
+                <span> &nbsp; &nbsp; </span>
+                @Html.LabelFor(user=> user.Password)
+                <span> &nbsp; </span>
+                @Html.PasswordFor(user=> user.Password)
+                <span> &nbsp; &nbsp; </span>
+                @Html.LabelFor(user=> user.ConfirmPassword)
+                <span> &nbsp; </span>
+                @Html.PasswordFor(user=> user.ConfirmPassword)
+                <span> &nbsp; </span>
+                <input type="submit" value="Register" id="button" type="button" class="btn btn-outline-dark my-sm-0"/>
+            }
+            </center>
+            &nbsp;
+            </div>
+          </div>
         </div>
-        <br>
-        &nbsp;
-        &nbsp;
-        <center>@using (Html.BeginForm("Register", "Account", FormMethod.Post))
-        {
-            @Html.LabelFor(user => user.Email)
-            @Html.TextBoxFor(user=> user.Email)
-
-            @Html.LabelFor(user=> user.Password)
-            @Html.PasswordFor(user=> user.Password)
-
-            @Html.LabelFor(user=> user.ConfirmPassword)
-            @Html.PasswordFor(user=> user.ConfirmPassword)
-
-            <input type="submit" value="Register" id="button" type="button" class="btn btn-outline-dark my-sm-0"/>
-        }
-        </center>
-        &nbsp;
       </div>
     </div>
   </div>
