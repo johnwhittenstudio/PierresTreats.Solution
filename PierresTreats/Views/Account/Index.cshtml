@@ -23,14 +23,14 @@
               <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
               <img class="vertical-decoration bottom" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
           <div class="card-header">
-            <center><h1 id="title">Account Login</h1></center>
+            <center><h1 id="title" style="font-size:4vw">Account Login</h1></center>
           </div>
           <br>
           &nbsp;
           &nbsp;
               @if (User.Identity.IsAuthenticated)
               {
-                  <center><strong><h1 style="font-size:4vw">Bienvenue @User.Identity.Name!</h1></strong>
+                  <center><strong><h1 style="font-size:4vw">Bienvenue, @User.Identity.Name!</h1></strong>
                   <br>
                   @using (Html.BeginForm("LogOff", "Account"))
                   {
