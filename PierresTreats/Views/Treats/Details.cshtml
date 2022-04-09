@@ -75,17 +75,93 @@
               }
               else
               {
-                <center><h4> Flavors:</h4>
+                <table id="table" class ="table" style="width: 100%">
+                  <thead>
+                  <tr>
+                    <th>
+                        &nbsp;
+                    </th>
+                    <th>
+                        <em>Flavor</em>
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                  </tr>
+                  </thead>
+                <tbody>
                 @foreach (var join in Model.JoinEntities)
                   {
-                    <h2>@join.Flavor.Type</h2>
-                    @using (Html.BeginForm("DeleteFlavor", "Treats"))
-                    {
-                      @Html.Hidden("joinId", @join.FlavorTreatId)
-                      <input type="submit" value="Remove Flavor" id="button" class="btn btn-outline my-sm-0" />
-                    }
-                  }</center>
+                  <tr id="table" class="table">
+                    <td width 10%>
+                        &nbsp;
+                    </td>
+                    <td width 50%>
+                      <h2>@join.Flavor.Type</h2>
+                    </td>
+                    <td>
+                      @using (Html.BeginForm("DeleteFlavor", "Treats"))
+                      {
+                        @Html.Hidden("joinId", @join.FlavorTreatId)
+                        <input type="submit" value="Remove Flavor" id="button" class="btn btn-outline my-sm-0" />
+                      }
+                    </td>
+                  </tr>
+                 }
+                </tbody>
+              </table>
               }
+
+            @* <table id="table" class="table" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th>
+                        &nbsp;
+                    </th>
+                    <th>
+                        <em>Name</em>
+                    </th>
+                    <th>
+                        <em>Inventory</em>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="table" class="table">
+                    <td width 10%>
+                        &nbsp;
+                    </td>
+                    <td width 50%>
+                        <h4>@Html.DisplayFor(model => model.Name)</h4>
+                    </td>
+                    <td width 50%>
+                    @if(@Model.Amount == 0)
+                        {
+                          <p>Pardonnez-nous, we are currently out of this treat</p>
+                        }
+                        else
+                        {
+                          <h4>@Html.DisplayFor(model => model.Amount)</h4>
+                        }
+                        
+                    </td>
+                    <td width 50%>
+                        @Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId }, new { @class = "btn btn-outline", id="button" })
+                    </td>
+                    <td width 50%>
+                        @Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId }, new { @class = "btn btn-outline", id="button"  })
+                    </td>
+                  </tr>
+                </tbody>
+              </table> *@
+
+
+
+
+
+
+
+
             &nbsp;
             &nbsp;
             <center><button id="button" type="button" class="btn btn-outline my-sm-0" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</button>
