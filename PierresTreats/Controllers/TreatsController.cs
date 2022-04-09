@@ -1,11 +1,11 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
 using PierresTreats.Models;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
@@ -24,20 +24,24 @@ namespace PierresTreats.Controllers
     }
 
 
-    public async Task<ActionResult> Index()
+    [AllowAnonymous]
+    public ActionResult Index()
     {
-        var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        var currentUser = await _userManager.FindByIdAsync(userId);
-        var userItems = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
-        return View(userItems);
+      return View(_db.Treats.OrderBy(x => x.Name).ToList());
     }
-
 
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Type");
       return View();
     }
+
+
+    // public ActionResult Create()
+    // {
+    //   ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Type");
+    //   return View();
+    // }
 
     [HttpPost]
     public async Task<ActionResult> Create(Treat treat, int FlavorId)

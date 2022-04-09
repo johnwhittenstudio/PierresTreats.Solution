@@ -1,15 +1,17 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
 using PierresTreats.Models;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
 namespace PierresTreats.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -19,24 +21,38 @@ namespace PierresTreats.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
-      List<Flavor> model = _db.Flavors.ToList();
+      List<Flavor> model = _db.Flavors.OrderBy(x => x.Type).ToList();
       return View(model);
     }
 
-    [Authorize]
     public ActionResult Create()
     {
       return View();
     }
     
-    [Authorize]
     [HttpPost]
     public ActionResult Create(Flavor flavor)
     {
+      ViewBag.ErrorMessage = "";
+      bool isUnique = true;
+      List<Flavor> flavorList = _db.Flavors.ToList();
+      foreach(Flavor iteration in flavorList)
+      {
+        if (flavor.Type == iteration.Type) 
+        {
+          isUnique = false;
+          ModelState.AddModelError("DuplicateFlavor", iteration.Type + " already exists");
+          return View();
+        }
+      }
+      if (isUnique)
+      {
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
+      }
       return RedirectToAction("Index");
     }
 
