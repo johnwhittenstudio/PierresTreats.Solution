@@ -2,8 +2,7 @@
 
 #### _a web-based application to keep track of treats and flavor specialties at Pierre's Confectionery using Entity to manage a many-to-many relationship in an SQL database and Identity to manage user Authentication._
 
-#### by **John Whitten**
-#### April 8, 2022
+#### by **John Whitten** ~ April 8, 2022
 
 ![Cover](./PierresTreats/wwwroot/img/img_01.png)
 
