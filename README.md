@@ -1,4 +1,4 @@
-# 🧁 **Pierre's Sweet Treats Confectionery** 🧁 
+# <p align="center"> 🧁 **Pierre's Sweet Treats Confectionery** 🧁 </p>
 
 #### _a web-based application to keep track of treats and flavor specialties at Pierre's Confectionery using Entity to manage a many-to-many relationship in an SQL database and Identity to manage user Authentication._
 
